@@ -1,0 +1,7 @@
+en:
+  app:
+    mailers:
+      notifications:
+        urgent:
+          subject: "Urgent test!"
+          body: "Urgent test!"
