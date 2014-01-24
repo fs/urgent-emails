@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler'
 
-Bundler.require(:default)
+ENV['APP_ENV'] ||= 'development'
 
 module Urgents
   extend self
@@ -13,4 +13,5 @@ module Urgents
   @no_reply = 'no-reply@example.com'
 end
 
-Dir[File.expand_path('{app,config}/**/*.rb')].each(&method(:require))
+Bundler.require(:default, ENV['APP_ENV'])
+Dir[File.expand_path('{config,app}/**/*.rb')].each(&method(:require))

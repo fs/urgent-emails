@@ -16,5 +16,9 @@ describe NotificationsMailer do
     it 'delivers email from no-reply address' do
       email.from.must_equal [app_config.no_reply]
     end
+
+    it 'contains urgent message' do
+      email.body.must_include 'Urgent test'
+    end
   end
 end
