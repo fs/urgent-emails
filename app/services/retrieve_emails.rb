@@ -11,12 +11,12 @@ class RetrieveEmails
   def read_emails(block)
     File.open(FILE) do |file|
       while email = file.gets
-        block << email.chomp if valid?(email.chomp)
+        add_valid_email(email.chomp, block)
       end
     end
   end
 
-  def valid?(email)
-    EMAIL_REG =~ email
+  def add_valid_email(email, block)
+    block << email if email =~ EMAIL_REG
   end
 end
