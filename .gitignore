@@ -1,2 +1,4 @@
 .bundle
 lib/emails.text
+public.pem
+private.pem

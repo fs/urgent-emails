@@ -19,8 +19,8 @@ Keys
 - Generate private key and encode it with Base64
 
 ```
-openssl genrsa -out private.pem 2048
-cat private.pem | base64
+openssl genrsa -out private.pem 4056
+cat private.pem | base64 --wrap=0
 ```
 
 - Set new value of private key for `ENV[APP_KEY_SECRET]` on the server side
@@ -29,7 +29,7 @@ cat private.pem | base64
 
 ```
 openssl rsa -in private.pem -out public.pem -pubout
-cat public.pem | base64
+cat public.pem | base64 --wrap=0
 ```
 
 Encryption
