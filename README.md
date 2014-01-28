@@ -28,3 +28,9 @@ Scripts
 
 * `bin/bootstrap` - setup required gems and migrate db if needed
 * `bin/ci` - should be used in the CI to run specs
+* `bin/encrypt` - script for encrypting/decrypting `lib/emails.text` file
+
+Documentation & Examples
+-
+
+[How to update the list of receivers](doc/HOW_TO_UPDATE_EMAILS.md)
