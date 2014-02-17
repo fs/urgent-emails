@@ -3,5 +3,5 @@ en:
     mailers:
       notifications:
         urgent:
-          subject: "Urgent test!"
-          body: "Urgent test!"
+          subject: "Notification: %{email}"
+          body: "Hello! This is just a confirmation you will be receiving notifications from %{email}"

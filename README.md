@@ -39,3 +39,12 @@ To update list of receivers please use environemt variable `EMAILS` with
 comma separated emails:
 
 `EMAILS = 'email@example.com, email2@example.com'`
+
+
+How to test notifications:
+
+`EMAILS=my_email@example.com rake notifications:deliver[today]`
+where today is day to perform.
+Accepted values: [monday | tuesday | wednesday | thursday | friday | saturday | sunday]
+
+`rake notification:deliver[friday]`

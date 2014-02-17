@@ -6,7 +6,7 @@ describe NotificationsMailer do
     let(:email) { NotificationsMailer.urgent(receiver) }
 
     it 'sets subject' do
-      email.subject.must_equal I18n.t('app.mailers.notifications.urgent.subject')
+      email.subject.must_equal I18n.t('app.mailers.notifications.urgent.subject', email: receiver)
     end
 
     it 'delivers email to receiver' do
@@ -18,7 +18,7 @@ describe NotificationsMailer do
     end
 
     it 'contains urgent message' do
-      email.body.must_include 'Urgent test'
+      email.body.must_include I18n.t('app.mailers.notifications.urgent.body', email: receiver)
     end
   end
 end
