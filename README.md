@@ -35,4 +35,7 @@ Scripts
 Documentation & Examples
 -
 
-[How to update the list of receivers](doc/HOW_TO_UPDATE_EMAILS.md)
+To update list of receivers please use environemt variable `EMAILS` with
+comma separated emails:
+
+`EMAILS = 'email@example.com, email2@example.com'`
