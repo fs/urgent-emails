@@ -9,8 +9,8 @@ Dependencies
 - Ruby 2.1.0
   - `rbenv install 2.1.0`
 
-Quick Start
--
+## Quick Start
+
 
 Clone this repo:
 
@@ -25,15 +25,15 @@ Run bootstrap script
 bin/bootstrap
 ```
 
-Scripts
--
+## Scripts
+
 
 * `bin/bootstrap` - setup required gems and migrate db if needed
 * `bin/ci` - should be used in the CI to run specs
 * `bin/encrypt` - script for encrypting/decrypting `lib/emails.text` file
 
-Documentation & Examples
--
+## Documentation & Examples
+
 
 To update list of receivers please use environemt variable `EMAILS` with
 comma separated emails:
@@ -48,3 +48,12 @@ where today is day to perform.
 Accepted values: [monday | tuesday | wednesday | thursday | friday | saturday | sunday]
 
 `rake notification:deliver[friday]`
+
+## Credits
+
+Ruby Base is maintained by [Vladimir Mikhailov](http://github.com/VladimirMikhailov).
+It was written by [Flatstack](http://www.flatstack.com) with the help of our
+[contributors](http://github.com/fs/urgent-emails/contributors).
+
+
+[![Flatstack](http://www.flatstack.com/assets/images/logo.png)](http://www.flatstack.com)
