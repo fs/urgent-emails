@@ -4,12 +4,12 @@ require 'bundler'
 ENV['APP_ENV'] ||= 'development'
 
 module Urgents
-  extend self
-
   attr_accessor :root
+  module_function :root
   @root = File.expand_path('../', __dir__)
 
   attr_accessor :no_reply
+  module_function :no_reply
   @no_reply = 'no-reply@example.com'
 end
 

@@ -1,5 +1,5 @@
 class RetrieveEmails
-  EMAIL_REG=/\A[^@]+@[^@]+\z/
+  EMAIL_REG = /\A[^@]+@[^@]+\z/
 
   def emails
     Enumerator.new(&method(:read_emails))
