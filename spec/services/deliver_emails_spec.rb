@@ -1,23 +1,28 @@
-require_relative '../spec_helper.rb'
-require 'ostruct.rb'
+require 'ostruct'
 
 describe DeliverEmails do
-  let(:deliverer) { DeliverEmails.new }
+  let(:deliverer) { described_class.new }
 
   describe '#perform' do
     let(:emails) { ['email1@example.com', 'email2@example.com'] }
     let(:emails_retriever) { OpenStruct.new(emails: emails) }
-    let(:mailer) { MiniTest::Mock.new }
-    let(:mail) { MiniTest::Mock.new }
 
-    it 'delivers emails to the given list' do
-      mailer.expect(:urgent, mail, ['email1@example.com'])
-      mailer.expect(:urgent, mail, ['email2@example.com'])
-      2.times{ mail.expect(:deliver, nil) }
+    let(:mailer) { double(:mailer) }
+    let(:email) { double(:email) }
+
+    before do
+      allow(mailer).to receive(:urgent).and_return(email)
+      allow(email).to receive(:deliver)
 
       deliverer.perform(mailer: mailer, retriever: emails_retriever)
+    end
 
-      mailer.verify
+    it 'delivers emails to the given list' do
+      expect(email).to have_received(:deliver).exactly(emails.size).times
+
+      emails.each do |email|
+        expect(mailer).to have_received(:urgent).with(email)
+      end
     end
   end
 end
