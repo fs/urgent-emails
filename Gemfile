@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.2.2'
 
-gem 'actionmailer', require: 'action_mailer'
+gem 'rails-api'
 gem 'slim'
 gem 'dotenv'
 
@@ -11,6 +11,6 @@ group :development do
 end
 
 group :test, :development do
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'rspec-its'
 end

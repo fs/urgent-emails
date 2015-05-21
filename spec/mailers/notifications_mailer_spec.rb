@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe NotificationsMailer do
   describe '.urgent' do
     let(:receiver) { 'my@example.com' }
